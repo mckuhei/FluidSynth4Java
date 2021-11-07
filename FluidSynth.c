@@ -15,7 +15,7 @@ jfieldID settings_id;
 jfieldID adriver_id;
 jfieldID sfont_id;
 
-JNIEXPORT void JNICALL Java_FluidSynth_init(JNIEnv *env, jobject thisObj)
+JNIEXPORT void JNICALL Java_ml_mckuhei_utils_FluidSynth_init(JNIEnv *env, jobject thisObj)
 {
   fluid_settings_t *settings;
   fluid_synth_t *synth;
