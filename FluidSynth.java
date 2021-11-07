@@ -37,10 +37,6 @@ public class FluidSynth {
 
   public native void close();
 
-  public void send(MidiMessage message, long timeStamp) {
-
-  }
-
   public void noteOn(int midiNumber) {
     noteOn(0, midiNumber, 127);
   }

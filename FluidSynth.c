@@ -108,7 +108,7 @@ JNIEXPORT void JNICALL Java_ml_mckuhei_utils_FluidSynth_close(JNIEnv *env, jobje
   fluid_audio_driver_t *adriver;
   settings = (*env)->GetLongField(env, thisObj, settings_id);
   synth = (*env)->GetLongField(env, thisObj, synth_id);
-  adriver = (*env)->GetLongField(env, thisObj, adriver);
+  adriver = (*env)->GetLongField(env, thisObj, adriver_id);
   delete_fluid_audio_driver(adriver);
   delete_fluid_synth(synth);
   delete_fluid_settings(settings);
