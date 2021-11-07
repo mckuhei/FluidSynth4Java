@@ -100,6 +100,30 @@ JNIEXPORT void JNICALL Java_ml_mckuhei_utils_FluidSynth_printLoadedInstruments(J
   }
 }
 
+JNIEXPORT void JNICALL Java_ml_mckuhei_utils_FluidSynth_setChannelType
+  (JNIEnv *env, jobject thisObj, jint channel, jint type) {
+    jclass clazz = (*env)->GetObjectClass(env, thisObj);
+    fluid_synth_t *synth;
+    synth = (*env)->GetLongField(env, thisObj, synth_id);
+    fluid_synth_set_channel_type(synth,channel,type);
+  }
+
+JNIEXPORT void JNICALL Java_ml_mckuhei_utils_FluidSynth_resetPrograms
+  (JNIEnv *env, jobject thisObj) {
+    jclass clazz = (*env)->GetObjectClass(env, thisObj);
+    fluid_synth_t *synth;
+    synth = (*env)->GetLongField(env, thisObj, synth_id);
+    fluid_synth_program_reset(synth);
+  }
+
+JNIEXPORT void JNICALL Java_ml_mckuhei_utils_FluidSynth_resetSystem
+  (JNIEnv *env, jobject thisObj) {
+    jclass clazz = (*env)->GetObjectClass(env, thisObj);
+    fluid_synth_t *synth;
+    synth = (*env)->GetLongField(env, thisObj, synth_id);
+    fluid_synth_system_reset(synth);
+  }
+
 JNIEXPORT void JNICALL Java_ml_mckuhei_utils_FluidSynth_close(JNIEnv *env, jobject thisObj)
 {
   jclass clazz = (*env)->GetObjectClass(env, thisObj);

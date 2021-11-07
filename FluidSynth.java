@@ -21,6 +21,9 @@ public class FluidSynth {
   protected long adriver;
   protected long sfont = -1;
 
+  public static final int CHANNEL_TYPE_MELODIC = 0,
+                          CHANNEL_TYPE_DRUM = 1;
+
   private native void init();
 
   public native boolean open(String soundfontFile);
@@ -33,7 +36,13 @@ public class FluidSynth {
 
   public native void programChange(int channel, int program);
 
-  public native void printLoadedInstruments();
+  public native void setChannelType(int channel, int type);
+
+  public native void resetPrograms();
+
+  public native void resetSystem();
+
+  public native void stopAllNotes();
 
   public native void close();
 
